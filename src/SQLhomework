@@ -1,0 +1,126 @@
+CREATE TABLE teachers
+(
+    id   INT     NOT NULL,
+    name VARCHAR NOT NULL,
+    age  INT,
+    INN  INT     NOT NULL
+);
+
+INSERT INTO teachers(id, name, age, INN)
+VALUES (1, 'Meder', 23, 2345),
+       (2, 'Timur', 27, 0102),
+       (3, 'Nooruz', 21, 0202);
+
+SELECT *
+FROM teachers
+ORDER BY age DESC;
+
+
+
+CREATE TABLE movies
+(
+    name       VARCHAR,
+    genre      VARCHAR,
+    createDate INT
+);
+
+INSERT INTO movies(name, genre, createDate)
+VALUES ('Mom', 'bestseller', 12 - 23 - 2000),
+       ('Mark', 'Detective', 11 - 03 - 1990),
+       ('We', 'Detective', 9 - 05 - 1999);
+
+SELECT *
+FROM movies
+WHERE genre = 'Detective';
+
+
+CREATE TABLE cars
+(
+    stamp      VARCHAR,
+    createDate INT,
+    color      VARCHAR
+);
+
+INSERT INTO cars(stamp, createDate, color)
+VALUES ('BMV-X90', 1 - 12 - 1900, 'red'),
+       ('Volkswagen', 20 - 04 - 2000, 'black'),
+       ('Renault', 02 - 05 - 2021, 'turquoise');
+
+SELECT cars.stamp, count(cars.stamp)
+FROM cars
+GROUP BY stamp;
+
+CREATE TABLE users
+(
+    id       INT PRIMARY KEY,
+    username VARCHAR(50)  NOT NULL,
+    email    VARCHAR(100) NOT NULL
+);
+
+INSERT INTO users (id, username, email)
+VALUES (1, 'user1', 'user1@example.com'),
+       (2, 'user2', 'user2@example.com');
+
+SELECT *
+FROM users
+LIMIT 1;
+
+CREATE TABLE students
+(
+    name     VARCHAR,
+    age      INT,
+    lastname VARCHAR,
+    course   INT
+);
+
+INSERT INTO students(name, age, lastname, course)
+VALUES ('Sami', 16, 'lastname', 1),
+       ('Rabi', 17, 'lastname', 2),
+       ('Samira', 16, 'lastname', 3);
+
+SELECT *
+FROM students
+WHERE age >= 17;
+
+
+CREATE TABLE tasks
+(
+    task_id     INT PRIMARY KEY,
+    task_name   VARCHAR(100) NOT NULL,
+    description TEXT
+);
+
+INSERT INTO tasks (task_id, task_name, description)
+VALUES (1, 'task name', 'description'),
+       (2, 'task name', 'description');
+SELECT *
+FROM tasks
+WHERE task_name = 'name';
+
+
+CREATE TABLE products
+(
+    product_id   INT,
+    product_name VARCHAR(100),
+    price        INT
+);
+
+INSERT INTO Products (product_id, product_name, Price)
+VALUES (1, 'Laptop', 999.99),
+       (2, 'apple', 599.99),
+       (3, 'lemon', 399.9);
+
+CREATE TABLE shipping
+(
+    shipping_id      INT PRIMARY KEY,
+    shipping_date    DATE,
+    shipping_address VARCHAR(200)
+);
+
+INSERT INTO Shipping (shipping_id, shipping_date, shipping_address)
+VALUES (1, '2024-03-25', 'Ул. Примерная, 123'),
+       (2, '2024-03-26', 'Ул. Тестовая, 456'),
+       (3, '2024-03-27', 'Ул. Демонстрационная, 789');
+
+
+
